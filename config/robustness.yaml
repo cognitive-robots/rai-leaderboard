@@ -1,0 +1,16 @@
+lidar:
+  theta: [-10, 10] # vertical angle range in Lidar occlusion
+  phi: [110, 90] # horizontal angle in Lidar occlusion
+  channel_range_to_remove: [[1,5], [21,25], [41,45]] # in Lidar channel removal
+camera:
+  probability: 0.3 # probability in salt and pepper noise
+  num_vertices: 3 # number of vertices in camera occlusion
+  random_seed: 11 # random seed in camera occlusion
+gnss:
+  noise_level: 0.00001 # gnss noise level
+imu:
+  acc_noise_lvl: 2 # imu noise level
+  compass_noise_lvl: 0.00001 # compass noise level
+  gyroscope_noise_lvl: 0.00001 # gyro noise level
+speedometer:
+  speed_noise_lvl: 2 # speedometer noise level
