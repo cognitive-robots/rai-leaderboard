@@ -33,7 +33,7 @@ then
     export CHALLENGE_TRACK_CODENAME=SENSORS
     export PORT=2000 # same as the carla server port
     export TM_PORT=2500 # port for traffic manager, required when spawning multiple servers/clients
-    export DEBUG_CHALLENGE=0
+    export DEBUG_CHALLENGE=0 # debug information from the simulator
     export REPETITIONS=1 # multiple evaluation runs
     export ROUTES=leaderboard/data/routes_devtest.xml # routes
     export SCENARIOS=leaderboard/data/all_towns_traffic_scenarios_public.json # scenarios
@@ -43,4 +43,5 @@ then
     export SAVE_PATH=data/eval # path for saving episodes while evaluating
     export RESUME=True
     export CUSTOM_ROUTE_TIMEOUT=370
+    export HAS_DISPLAY=0 # set to 1 to enable visualisation. Wrap vis code in `if os.getenv("HAS_DISPLAY") == "1"` check
 fi
