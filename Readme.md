@@ -14,14 +14,14 @@
 
 3. Next, clone the RAI Carla repository and name it `rai` using the following command:
     ```bash
-    git clone -b master https://github.com/cognitive-robots/rai-leaderboard.git rai
+    git clone -b main https://github.com/cognitive-robots/rai-leaderboard.git rai
     ```
 
 4. If you are adding these repositories to an existing Git repository and wish to include them as submodules, use the following commands:
     ```bash
     git submodule add -b leaderboard-1.0 https://github.com/carla-simulator/leaderboard.git
     git submodule add -b leaderboard-1.0 https://github.com/carla-simulator/scenario_runner.git
-    git submodule add -b updates https://github.com/cognitive-robots/rai-leaderboard.git rai
+    git submodule add -b main https://github.com/cognitive-robots/rai-leaderboard.git rai
     ```
 
     **Note:** In the command for the `rai-leaderboard` repository, we are naming the submodule `rai`. Ensure you use the full command as shown.
