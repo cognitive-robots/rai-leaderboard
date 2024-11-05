@@ -10,7 +10,7 @@ source $SCRIPT_DIR/env_var.sh --docker False
 #Note that this require super user priviledge to run.
 chmod +r /sys/class/powercap/intel-rapl/intel-rapl:0/energy_uj
 
-python3 ${LEADERBOARD_ROOT}/main.py \
+python3 ${RAI_LEADERBOARD_ROOT}/main.py \
 --scenarios=${SCENARIOS}  \
 --routes=${ROUTES} \
 --repetitions=${REPETITIONS} \
