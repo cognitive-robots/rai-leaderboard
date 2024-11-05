@@ -10,6 +10,8 @@ The default target name is "leaderboard-user"
 END
 )
 
+usage() { echo "${DOC_STRING}"; echo "${USAGE_STRING}"; exit 0; }
+
 # Defaults
 TARGET_NAME="leaderboard-user"
 
