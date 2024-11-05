@@ -4,7 +4,7 @@
 SCRIPT_DIR="$( dirname "${BASH_SOURCE[0]}" )"
 
 # load environment variables
-source $SCRIPT_DIR/env_var.sh --docker False
+source $SCRIPT_DIR/env_var.sh
 
 #Uncomment this to give permission to read how much electric power your hardware consume.
 #Note that this require super user priviledge to run.
