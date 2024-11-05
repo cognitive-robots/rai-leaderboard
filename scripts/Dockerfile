@@ -44,7 +44,7 @@ RUN /opt/conda/bin/conda init bash && \
      echo "conda activate python37" >> ~/.bashrc
 
 RUN packages='py_trees==0.8.3 psutil shapely six dictor requests ephem tabulate' && \
-     /opt/conda/envs/python37/bin/pip install --no-cache-dir "${packages}"
+     /opt/conda/envs/python37/bin/pip install --no-cache-dir ${packages}
 
 WORKDIR /workspace
 
