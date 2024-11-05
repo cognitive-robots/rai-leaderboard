@@ -49,6 +49,6 @@ fi
 # cp -f ${RAI_LEADERBOARD_ROOT}/../requirements.txt .tmp
 
 # build docker image
-docker build --force-rm -t leaderboard-user -f ${RAI_LEADERBOARD_ROOT}/scripts/Dockerfile.master .
+docker build --force-rm -t leaderboard-user -f ${RAI_LEADERBOARD_ROOT}/scripts/Dockerfile .
 
 rm -fr .tmp
