@@ -1,5 +1,33 @@
 #!/bin/bash
 
+DOC_STRING="Build Carla agent docker image."
+
+USAGE_STRING=$(cat <<- END
+Usage: $0 [-h|--help] [-t|--target-name TARGET]
+
+The default target name is "leaderboard-user"
+
+END
+)
+
+usage() { echo "${DOC_STRING}"; echo "${USAGE_STRING}"; exit 0; }
+
+# Defaults
+TARGET_NAME="leaderboard-user"
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -t | --target-name )
+      TARGET_NAME=$2
+      shift 2 ;;
+    -h | --help )
+      usage
+      ;;
+    * )
+      shift ;;
+  esac
+done
+
 # Get the relative path to the bash directory
 SCRIPT_DIR="$( dirname "${BASH_SOURCE[0]}" )"
 
@@ -49,6 +77,6 @@ fi
 # cp -f ${RAI_LEADERBOARD_ROOT}/../requirements.txt .tmp
 
 # build docker image
-docker build --force-rm -t leaderboard-user -f ${RAI_LEADERBOARD_ROOT}/scripts/Dockerfile .
+docker build --force-rm -t ${TARGET_NAME} -f ${RAI_LEADERBOARD_ROOT}/scripts/Dockerfile .
 
 rm -fr .tmp
