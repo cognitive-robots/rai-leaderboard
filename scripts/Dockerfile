@@ -44,7 +44,7 @@ RUN /opt/conda/bin/conda init bash && \
      echo "conda activate python37" >> ~/.bashrc
 
 RUN packages='py_trees==0.8.3 psutil shapely six dictor requests ephem tabulate' && \
-     /opt/conda/envs/python37/bin/pip install --no-cache-dir ${packages}
+     /opt/conda/envs/python37/bin/pip install --no-cache-dir "${packages}"
 
 WORKDIR /workspace
 
@@ -63,8 +63,8 @@ COPY .tmp/team_code ${TEAM_CODE_ROOT}
 ENV PATH "/workspace/CARLA/PythonAPI/carla/dist/carla-0.9.10-py3.7-linux-x86_64.egg:/opt/conda/envs/python37/bin:/opt/conda/envs/bin:$PATH"
 ENV PYTHONPATH "/workspace/CARLA/PythonAPI/carla/dist/carla-0.9.10-py3.7-linux-x86_64.egg:${SCENARIO_RUNNER_ROOT}:${CARLA_ROOT}/PythonAPI/carla:${LEADERBOARD_ROOT}:${RAI_LEADERBOARD_ROOT}:${TEAM_CODE_ROOT}:${PYTHONPATH}"
 
-RUN mkdir -p /workspace/results
-RUN chmod +x /workspace/leaderboard/scripts/run_evaluation.sh
+RUN mkdir -p /workspace/results && \
+    chmod +x /workspace/leaderboard/scripts/run_evaluation.sh
 
 # Install additional packages and leaderboard dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends libgl1 libgtk2.0-dev && \
